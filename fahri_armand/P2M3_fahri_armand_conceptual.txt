@@ -1,0 +1,19 @@
+1. NoSQL
+NoSQL adalah jenis database yang tidak menggunakan model relasional, dirancang untuk data tidak terstruktur, besar, dan membutuhkan skalabilitas tinggi. Mendukung model seperti dokumen, key-value, grafik, dan column-family.
+
+2. Kapan Menggunakan NoSQL vs RDBMS
+NoSQL: Digunakan saat data tidak terstruktur, butuh skalabilitas horizontal, dan kecepatan baca/tulis tinggi. Cocok untuk aplikasi big data dan real-time.
+RDBMS: Cocok untuk data terstruktur dengan relasi yang kompleks, membutuhkan konsistensi tinggi, dan transaksi ACID, seperti aplikasi keuangan atau ERP.
+
+3. Contoh Tools NoSQL (Selain ElasticSearch)
+MongoDB: Mendukung penyimpanan data dalam format dokumen (JSON), sangat fleksibel dan mudah diskalakan.
+Cassandra: Basis data terdistribusi, sangat baik untuk penulisan cepat dan tahan kegagalan (fault tolerance) di lingkungan terdistribusi.
+
+4. Apache Airflow
+Airflow adalah platform workflow orchestration untuk mengelola, menjadwalkan, dan memonitor workflow secara terprogram. Berguna untuk mengotomatisasi proses ETL atau data pipeline.
+
+5. Great Expectations
+Great Expectations adalah framework open-source untuk validasi data yang memastikan kualitas data dengan mendefinisikan, menegakkan, dan mendokumentasikan aturan (expectations) pada dataset.
+
+6. Batch Processing
+Batch processing adalah metode memproses data dalam kelompok besar atau batch. Biasanya digunakan untuk analisis data historis, pembuatan laporan, atau pemrosesan transaksi dalam jumlah besar. Contoh tools: Apache Hadoop, Spark.

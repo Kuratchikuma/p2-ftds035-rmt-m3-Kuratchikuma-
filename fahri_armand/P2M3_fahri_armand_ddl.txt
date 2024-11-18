@@ -1,0 +1,42 @@
+Nama: Fahri armand rasyad
+batch: RMT-035
+objective: untuk membuat tabel dan memasukkan data raw ke dalam tabel yang nantinya akan digunakan untuk data cleaning dan visualisasi data
+dataset:  https://www.kaggle.com/datasets/lainguyn123/employee-survey
+
+CREATE TABLE employees (
+    EmpID SERIAL PRIMARY KEY,                  -- Unique identifier for each employee
+    Gender VARCHAR(10),                         -- Gender of the employee (e.g., Male, Female, Other)
+    Age INT,                                    -- Age of the employee
+    MaritalStatus VARCHAR(10),                 -- Marital status of the employee (e.g., Single, Married, Divorced, Widowed)
+    JobLevel VARCHAR(20),                      -- Job level of the employee (e.g., Intern/Fresher, Junior, Mid, Senior, Lead)
+    Experience INT,                             -- Number of years of work experience the employee has
+    Dept VARCHAR(50),                           -- Department where the employee works (e.g., IT, HR, Finance, Marketing, Sales, Legal, Operations, Customer Service)
+    EmpType VARCHAR(20),                       -- Type of employment (e.g., Full-Time, Part-Time, Contract)
+    WLB INT CHECK (WLB BETWEEN 1 AND 5),       -- Work-life balance rating (scale from 1 to 5)
+    WorkEnv INT CHECK (WorkEnv BETWEEN 1 AND 5), -- Work environment rating (scale from 1 to 5)
+    PhysicalActivityHours INT,                  -- Number of hours of physical activity per week
+    Workload INT CHECK (Workload BETWEEN 1 AND 5), -- Workload rating (scale from 1 to 5)
+    Stress INT CHECK (Stress BETWEEN 1 AND 5), -- Stress level rating (scale from 1 to 5)
+    SleepHours INT,                            -- Number of hours of sleep per night
+    CommuteMode VARCHAR(20),                   -- Mode of commute (e.g., Car, Public Transport, Bike, Walk, Motorbike)
+    CommuteDistance NUMERIC(5, 2),            -- Distance traveled during the commute (in kilometers)
+    NumCompanies INT,                          -- Number of different companies the employee has worked for
+    TeamSize INT,                              -- Size of the team the employee is part of
+    NumReports INT,                            -- Number of people reported to by the employee (only applicable for Senior and Lead levels)
+    EduLevel VARCHAR(20),                      -- Highest level of education achieved (e.g., High School, Bachelor, Master, PhD)
+    haveOT BOOLEAN,                            -- Indicator if the employee has overtime (True/False)
+    TrainingHoursPerYear INT,                  -- Number of hours of training received per year
+    JobSatisfaction INT CHECK (JobSatisfaction BETWEEN 1 AND 5) -- Rating of job satisfaction (scale from 1 to 5)
+);
+
+
+COPY employees(Gender, Age, MaritalStatus, JobLevel, Experience, Dept, EmpType,
+               WLB, WorkEnv, PhysicalActivityHours, Workload, Stress,
+               SleepHours, CommuteMode, CommuteDistance, NumCompanies,
+               TeamSize, NumReports, EduLevel, haveOT, TrainingHoursPerYear,
+               JobSatisfaction)
+FROM 'C:\Users\C O R E I 5\Documents\Hacktiv8\fase 2\project-m3\employee_raw.csv'
+DELIMITER ',' 
+CSV HEADER;
+
+\COPY employees (Gender, Age, MaritalStatus, JobLevel, Experience, Dept, EmpType, WLB, WorkEnv, PhysicalActivityHours, Workload, Stress, SleepHours, CommuteMode, CommuteDistance, NumCompanies, TeamSize, NumReports, EduLevel, haveOT, TrainingHoursPerYear, JobSatisfaction) FROM 'C:/Users/COREI5/Documents/Hacktiv8/fase 2/project-m3/employee_raw.csv' DELIMITER ',' CSV HEADER;
